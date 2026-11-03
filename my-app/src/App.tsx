@@ -13,6 +13,9 @@ import Posts from './posts/Posts';
 import PostDetail from './posts/PostDetail';
 import AddPost from './posts/AddPost';
 import Bank from './reducer/Bank';
+import ProductList from './products/ProductList';
+import Header from './layouts/Header';
+import Cart from './products/Cart';
 
 function App() {
 
@@ -24,14 +27,17 @@ function App() {
   return (
     <>
       <section className="app">
-        <Bank />
-        {/* <BrowserRouter>
+        {/* <Bank /> */}
+        <BrowserRouter>
+          <Header />
           <Routes>
-            <Route path='/' element={<Posts />} />
+              <Route path='/' element={<ProductList />} />
+              <Route path='/cart' element={<Cart />} />
+            {/* <Route path='/' element={<Posts />} />
             <Route path='/posts/:id' element={<PostDetail />} />
-            <Route path='/posts/add' element={<AddPost />} />
+            <Route path='/posts/add' element={<AddPost />} /> */}
           </Routes>
-        </BrowserRouter> */}
+        </BrowserRouter>
 
         {/* <Memo /> */}
         {/* <Todos /> */}
