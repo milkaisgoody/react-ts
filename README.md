@@ -10,3 +10,9 @@
 #### 전역 관리(Context)
 #### 1. 상품(Product) 생성 
 #### 2. 상품 담기 -> 장바구니(Cart)
+
+### 쇼핑 사이트 (프로젝트)
+### 리엑트 + Typescript + 서버 (Express)
+1. 프론트 UI : shop-mall 
+2. 서버(PostgreSQL 연동)
+3. Render.com에 운영
