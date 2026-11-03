@@ -16,6 +16,7 @@ import Bank from './reducer/Bank';
 import ProductList from './products/ProductList';
 import Header from './layouts/Header';
 import Cart from './products/Cart';
+import CartProvider from './context/CartProvider';
 
 function App() {
 
@@ -27,17 +28,20 @@ function App() {
   return (
     <>
       <section className="app">
-        {/* <Bank /> */}
-        <BrowserRouter>
-          <Header />
-          <Routes>
+        {/* CartProvider로 감싸면 내부의 컴포넌트는 children이 됨 */}
+        <CartProvider>
+          {/* <Bank /> */}
+          <BrowserRouter>
+            <Header />
+            <Routes>
               <Route path='/' element={<ProductList />} />
               <Route path='/cart' element={<Cart />} />
-            {/* <Route path='/' element={<Posts />} />
+              {/* <Route path='/' element={<Posts />} />
             <Route path='/posts/:id' element={<PostDetail />} />
             <Route path='/posts/add' element={<AddPost />} /> */}
-          </Routes>
-        </BrowserRouter>
+            </Routes>
+          </BrowserRouter>
+        </CartProvider>
 
         {/* <Memo /> */}
         {/* <Todos /> */}
@@ -63,7 +67,7 @@ function App() {
           <h3>또 다른 박스</h3>
           <p>이것은 또 다른 Box 컴포넌트 안에 있는 내용입니다.</p>
         </Box> */}
-        
+
       </section>
     </>
   )
