@@ -8,4 +8,4 @@ export const initialProducts: Product[] = [
   { id: 3, pName: "27인치 모니터", category: "모니터", price: 279000, description: "QHD 해상도, 165Hz 주사율" },
   { id: 4, pName: "USB-C 허브", category: "주변기기", price: 39000, description: "HDMI·USB 3.0·SD 카드 지원 7in1" },
   { id: 5, pName: "웹캠 FHD", category: "주변기기", price: 45000, description: "1080p 30fps, 자동 초점" },
-]
+];
