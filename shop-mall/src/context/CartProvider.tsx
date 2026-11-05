@@ -26,6 +26,28 @@ const CartProvider = ({children} : {children: React.ReactNode}) => {
         })
     } //addToCart() 닫기
 
+    // 장바구니에서 상품 수량 업데이트
+    const updateQuantity = (productId : number, qty: number) => {
+        // 장바구니에 있는 상품 중에서 선택한 상품의 수량 증가 및 감소
+        setCartItems(prevItems => 
+            prevItems.map(item => 
+                item.productId === productId ? {...item, qty} : item 
+            )
+        );
+    }
+
+    // 장바구니와 상품 삭제 (해당 아이디)
+    const removeFromCart = (productId: number) => {
+        //해당 아이디와 일치하지 않는 상품만 남긴다.
+        setCartItems(prevItems => 
+            prevItems.filter(item => item.productId !== productId))
+    }
+
+    //장바구니 상품 전체 삭제
+    const clearCart = () => {
+        setCartItems([]); //초기화
+    }
+
     //총 수량 계산
     const totalQuantity 
         = cartItems.reduce((sum, item) => sum + item.qty, 0);
@@ -41,8 +63,11 @@ const CartProvider = ({children} : {children: React.ReactNode}) => {
         <CartContext.Provider value={{
             cartItems, 
             addToCart,
+            updateQuantity,
+            removeFromCart,
             totalQuantity, 
-            totalPrice
+            totalPrice,
+            clearCart
         }}>
             {children}
         </CartContext.Provider>
